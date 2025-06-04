@@ -24,11 +24,12 @@ public class PlayerBehaviour : MonoBehaviour
     private void MovePlayer()
     {
         // Obtendo movimentação da entrada
-        float moveX = Input.GetAxis("Vertical");
-        float moveZ = Input.GetAxis("Horizontal");
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
 
         // Aplicando movimento ao player
         Vector3 movement = new Vector3(moveX, 0f, moveZ) * moveSpeed;
         _rigidbody.linearVelocity = new Vector3(movement.x, _rigidbody.linearVelocity.y, movement.z);
+        _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 }
