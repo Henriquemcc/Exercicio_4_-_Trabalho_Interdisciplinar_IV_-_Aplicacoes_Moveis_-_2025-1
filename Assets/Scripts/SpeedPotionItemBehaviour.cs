@@ -7,7 +7,7 @@ class SpeedPotionItemBehaviour : CollectibleItemBehaviour
     public float speedMoveIncrement = 20;
     public float speedMoveIncrementTimeOut = 4;
 
-    public override void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (((1 << collision.gameObject.layer) & playerLayer.value) != 0)
         {

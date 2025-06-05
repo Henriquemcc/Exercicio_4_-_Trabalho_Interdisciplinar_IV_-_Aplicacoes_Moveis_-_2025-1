@@ -6,5 +6,4 @@ using UnityEngine;
 abstract class CollectibleItemBehaviour : MonoBehaviour
 {   
     public LayerMask playerLayer;
-    public abstract void OnCollisionEnter(Collision other);
 }
