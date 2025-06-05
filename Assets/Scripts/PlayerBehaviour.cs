@@ -1,18 +1,17 @@
 using System.Collections;
-using System.Threading;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerBehaviour : MonoBehaviour
 {
-    [Header("Propriedades de Movimentação")]
-
     // Velocidade de Movimentação
+    [Header("Velocidade de Movimentação")]
     public float defaultMoveSpeed = 5;
     public float moveSpeed;
 
     // Moedas do jogador
-    public int coins;
+    [Header("Moedas do Jogador")]
+    public int coins = 0;
 
     // Componente responsável por simular a gravidade e realizar movimentação do player
     private Rigidbody _rigidbody;
