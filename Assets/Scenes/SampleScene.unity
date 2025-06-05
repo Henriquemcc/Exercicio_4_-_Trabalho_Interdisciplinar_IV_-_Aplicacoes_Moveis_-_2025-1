@@ -701,8 +701,9 @@ GameObject:
   - component: {fileID: 1590731344}
   - component: {fileID: 1590731343}
   - component: {fileID: 1590731346}
+  - component: {fileID: 1590731347}
   m_Layer: 0
-  m_Name: ItemPocao
+  m_Name: ItemPocaoVelocidade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,6 +825,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1590731347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590731341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55085d9f8639c94f6bba90ab93b05019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1736430943
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +854,7 @@ GameObject:
   - component: {fileID: 1736430944}
   - component: {fileID: 1736430949}
   - component: {fileID: 1736430948}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

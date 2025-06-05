@@ -6,13 +6,15 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Propriedades de Movimentação")]
 
     // Velocidade de Movimentação
-    [SerializeField] private float moveSpeed = 5;
+    public float defaultMoveSpeed = 5;
+    public float moveSpeed;
 
     // Componente responsável por simular a gravidade e realizar movimentação do player
     private Rigidbody _rigidbody;
 
     private void Awake()
     {
+        moveSpeed = defaultMoveSpeed;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
