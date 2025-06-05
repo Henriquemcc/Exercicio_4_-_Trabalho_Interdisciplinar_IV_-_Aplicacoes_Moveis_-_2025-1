@@ -14,11 +14,16 @@ class SpeedPotionItemBehaviour : CollectibleItemBehaviour
             // Mensagem de debug
             Debug.Log("Colidido com o player");
 
-            // Incrementando a velocidade do player
-            IncreasePlayerMoveSpeed(collider.gameObject.GetComponent<PlayerBehaviour>());
+            // Obtendo playerBehaviour de player
+            PlayerBehaviour playerBehaviour = collider.gameObject.GetComponent<PlayerBehaviour>();
+            if (playerBehaviour != null)
+            {
+                // Incrementando a velocidade do player
+                IncreasePlayerMoveSpeed(playerBehaviour);
 
-            // Deletando item
-            Destroy(gameObject);
+                // Deletando item
+                Destroy(gameObject);
+            }
         }
     }
 
