@@ -7,15 +7,15 @@ class SpeedPotionItemBehaviour : CollectibleItemBehaviour
     public float speedMoveIncrement = 20;
     public float speedMoveIncrementTimeOut = 4;
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collider)
     {
-        if (((1 << collision.gameObject.layer) & playerLayer.value) != 0)
+        if (((1 << collider.gameObject.layer) & playerLayer.value) != 0)
         {
             // Mensagem de debug
             Debug.Log("Colidido com o player");
 
             // Incrementando a velocidade do player
-            IncreasePlayerMoveSpeed(collision.gameObject.GetComponent<PlayerBehaviour>());
+            IncreasePlayerMoveSpeed(collider.gameObject.GetComponent<PlayerBehaviour>());
 
             // Deletando item
             Destroy(gameObject);
