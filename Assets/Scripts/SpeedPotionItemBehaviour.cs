@@ -29,7 +29,7 @@ class SpeedPotionItemBehaviour : CollectibleItemBehaviour
         playerBehaviour.moveSpeed += speedMoveIncrement;
 
         // Voltando a velocidade padrão
-        ReturnToPreviousSpeed(playerBehaviour);
+        StartCoroutine(ReturnToPreviousSpeed(playerBehaviour));
     }
 
     // Volta a velocidade de movimentação padrão após o timeout
