@@ -55,4 +55,13 @@ public class PlayerBehaviour : MonoBehaviour
         yield return new WaitForSeconds(timeOut);
         moveSpeed = defaultMoveSpeed;
     }
+
+    // Incrementa as moedas do jogador
+    public void IncrementCoins(int coinsIncrement)
+    {
+        if (coinsIncrement > 0)
+        {
+            coins += coinsIncrement;
+        }
+    }
 }
