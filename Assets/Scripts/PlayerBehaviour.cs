@@ -6,8 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
     // Velocidade de Movimentação
     [Header("Velocidade de Movimentação")]
-    public float defaultMoveSpeed = 5;
-    public float moveSpeed;
+    public float moveSpeed = 5;
 
     // Moedas do jogador
     [Header("Moedas do Jogador")]
@@ -18,7 +17,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        moveSpeed = defaultMoveSpeed;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -40,20 +38,20 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     // Incrementa a velocidade de movimentação do player temporariamente
-    public void TemporarilyIncreaseMoveSpeed(float speedMoveIncrement, float timeOut)
+    public void TemporarilyIncrementMoveSpeed(float speedMoveIncrement, float timeOut)
     {
         // Incrementando a velocidade de movimentação do player
         moveSpeed += speedMoveIncrement;
 
         // Voltando a velocidade padrão
-        StartCoroutine(ReturnToPreviousSpeed(timeOut));
+        StartCoroutine(DecrementMoveSpeed(timeOut, speedMoveIncrement));
     }
 
     // Volta a velocidade de movimentação padrão após o timeout
-    private IEnumerator ReturnToPreviousSpeed(float timeOut)
+    private IEnumerator DecrementMoveSpeed(float timeOut, float speedMoveDecrement)
     {
         yield return new WaitForSeconds(timeOut);
-        moveSpeed = defaultMoveSpeed;
+        moveSpeed -= speedMoveDecrement;
     }
 
     // Incrementa as moedas do jogador

@@ -19,7 +19,7 @@ class SpeedPotionItemBehaviour : CollectibleItemBehaviour
             if (playerBehaviour != null)
             {
                 // Incrementando a velocidade do player
-                playerBehaviour.TemporarilyIncreaseMoveSpeed(speedMoveIncrement, speedMoveIncrementTimeOut);
+                playerBehaviour.TemporarilyIncrementMoveSpeed(speedMoveIncrement, speedMoveIncrementTimeOut);
 
                 // Deletando item
                 Destroy(gameObject);
