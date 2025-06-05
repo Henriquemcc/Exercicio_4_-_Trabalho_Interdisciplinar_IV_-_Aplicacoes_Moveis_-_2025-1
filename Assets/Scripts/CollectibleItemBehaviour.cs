@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Collider))]
 
 // Comportamento de um item coletável
 abstract class CollectibleItemBehaviour : MonoBehaviour
