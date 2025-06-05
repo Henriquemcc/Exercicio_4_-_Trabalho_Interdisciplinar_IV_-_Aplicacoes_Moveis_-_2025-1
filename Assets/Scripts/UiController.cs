@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UiController : MonoBehaviour
 {
     // Texto que mostra as moedas do jogador
-    public Text coinsDisplayText;
+    public TextMeshProUGUI coinsDisplayText;
 
     // Player
     public GameObject player;
