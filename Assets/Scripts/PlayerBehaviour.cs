@@ -11,6 +11,9 @@ public class PlayerBehaviour : MonoBehaviour
     public float defaultMoveSpeed = 5;
     public float moveSpeed;
 
+    // Moedas do jogador
+    public int coins;
+
     // Componente responsável por simular a gravidade e realizar movimentação do player
     private Rigidbody _rigidbody;
 
