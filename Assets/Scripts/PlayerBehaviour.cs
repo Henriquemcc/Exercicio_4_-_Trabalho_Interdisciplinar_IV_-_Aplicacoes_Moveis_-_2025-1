@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -33,5 +35,22 @@ public class PlayerBehaviour : MonoBehaviour
         Vector3 movement = new Vector3(moveX, 0f, moveZ) * moveSpeed;
         _rigidbody.linearVelocity = new Vector3(movement.x, _rigidbody.linearVelocity.y, movement.z);
         _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+    }
+
+    // Incrementa a velocidade de movimentação do player temporariamente
+    public void TemporarilyIncreaseMoveSpeed(float speedMoveIncrement, float timeOut)
+    {
+        // Incrementando a velocidade de movimentação do player
+        moveSpeed += speedMoveIncrement;
+
+        // Voltando a velocidade padrão
+        StartCoroutine(ReturnToPreviousSpeed(timeOut));
+    }
+
+    // Volta a velocidade de movimentação padrão após o timeout
+    private IEnumerator ReturnToPreviousSpeed(float timeOut)
+    {
+        yield return new WaitForSeconds(timeOut);
+        moveSpeed = defaultMoveSpeed;
     }
 }

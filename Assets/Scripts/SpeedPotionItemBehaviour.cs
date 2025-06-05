@@ -19,28 +19,11 @@ class SpeedPotionItemBehaviour : CollectibleItemBehaviour
             if (playerBehaviour != null)
             {
                 // Incrementando a velocidade do player
-                IncreasePlayerMoveSpeed(playerBehaviour);
+                playerBehaviour.TemporarilyIncreaseMoveSpeed(speedMoveIncrement, speedMoveIncrementTimeOut);
 
                 // Deletando item
                 Destroy(gameObject);
             }
         }
-    }
-
-    // Incrementa a velocidade de movimentação do player
-    private void IncreasePlayerMoveSpeed(PlayerBehaviour playerBehaviour)
-    {
-        // Incrementando a velocidade de movimentação do player
-        playerBehaviour.moveSpeed += speedMoveIncrement;
-
-        // Voltando a velocidade padrão
-        StartCoroutine(ReturnToPreviousSpeed(playerBehaviour));
-    }
-
-    // Volta a velocidade de movimentação padrão após o timeout
-    private IEnumerator ReturnToPreviousSpeed(PlayerBehaviour playerBehaviour)
-    {
-        yield return new WaitForSeconds(speedMoveIncrementTimeOut);
-        playerBehaviour.moveSpeed = playerBehaviour.defaultMoveSpeed;
     }
 }
